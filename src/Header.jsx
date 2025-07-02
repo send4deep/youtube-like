@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toggleNav } from "./utils/appSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
+  const [searchText, setSearchText] = useState("");
   return (
     <div className="flex items-center justify-between mb-4">
       <div className="flex items-center">
@@ -21,11 +22,13 @@ const Header = () => {
       </div>
       <div>
         <input
-          className="border border-gray-300 py-2 px-3 w-lg rounded-tl-3xl rounded-bl-3xl"
+          className="border border-gray-400 py-2 px-3 w-lg rounded-tl-3xl rounded-bl-3xl"
           type="text"
           placeholder="Search"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
         />
-        <button className="border border-gray-300 rounded-tr-3xl rounded-br-3xl p-2">
+        <button className="border-l-0 border border-gray-400 rounded-tr-3xl rounded-br-3xl p-2 bg-gray-100">
           🍳
         </button>
       </div>
