@@ -16,9 +16,9 @@ const VideoContainer = () => {
     videosList
   ) : (
     <div className="flex flex-wrap mt-8 justify-between">
-      {videosList.map((item) => (
-        <VideoCard videoInfo={item} key={item.id} />
-      ))}
+      {videosList.map((item) => {
+        return <VideoCard videoInfo={item} key={item.id} />;
+      })}
     </div>
   );
 };

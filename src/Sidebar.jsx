@@ -1,12 +1,15 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const isNavOpen = useSelector((store) => store.app.isNavOpen);
   return !isNavOpen ? null : (
     <div className="w-1/7">
       <ul>
-        <li className="font-bold pt-4">Home</li>
+        <li className="font-bold pt-4">
+          <Link to={"/"}>Home</Link>
+        </li>
         <li className="font-bold pt-4">Shorts</li>
         <li className="font-bold pt-4">Subscriptions</li>
         <li>Subscription 1</li>
